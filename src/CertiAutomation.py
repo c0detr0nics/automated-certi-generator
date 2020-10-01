@@ -1,17 +1,33 @@
+# Script Author: [CodeTronics]
+# Target Python version: 3.6+ (Not tested with python 2 version)
+
+# Imports OpenCV library - required for this script
 import cv2
 
+# Modify the below variables according to your preferences
+
+# Enter valid paths from your own file system
+
+# The input file contains names as a line seperated list
 input_txt_file = 'C:\certi\certi-namelist.txt'
 
 template_file_path = 'C:\certi\CERTI_TEMPLATE.png'
 
+# Make sure this output directory already exists or else certificates won't actually be generated
 output_directory_path = 'C:\certi\Generated_Certificates\\'
 
 font_size = 4.2
 font_color = (51, 51, 51)
 
+# Test with different values for your particular Template
+# Automatic coordinates catcher coming in Future
+# This variables determine the exact position where your text will overlay on the template
+# Y adjustment determines the px to position above the horizontal center of the template (may be positive or negative)
 coordinate_y_adjustment = -500
-
+# X adjustment determiens the px to position to the right of verticial center of the template (may be positive or negative)
 coordinate_x_adjustment = -4
+
+# Core Logic begins
 
 print('The Script is executing...')
 
