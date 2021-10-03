@@ -4,6 +4,8 @@
 # Imports OpenCV library - required for this script
 import cv2
 
+from sys import argv
+
 # Modify the below variables according to your preferences
 
 # Enter valid paths from your own file system
@@ -15,6 +17,18 @@ template_file_path = 'C:\certi\CERTI_TEMPLATE.png'
 
 # Make sure this output directory already exists or else certificates won't actually be generated
 output_directory_path = 'C:\certi\Generated_Certificates\\'
+
+# Checks if there are any arguments, so that the user can manually
+# enter directories and templates,if there is no argument,
+# the variables remain with the default value passed previously.
+if len(argv) == 4 or len(argv) == 1:
+    if len(argv) == 4:
+        input_txt_file = argv[1]
+        template_file_path = argv[2]
+        output_directory_path = argv[3]
+else:
+    print("ERROR: INVALID ARGUMENTS")
+
 
 font_size = 4.2
 font_color = (51, 51, 51)
